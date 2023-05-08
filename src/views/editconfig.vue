@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>Personalized Setting</h1>
+      <h1>Edit Personalized Setting</h1>
       <form @submit.prevent="saveConfig">
         <label for="category">Category:</label>
         <select id="category" v-model="category">
@@ -43,7 +43,7 @@
       <p v-if="message">{{ message }}</p>
     </div>
   </template>
-
+  
   <script>
   import axios from 'axios';
   import Swal from 'sweetalert2';
@@ -75,7 +75,7 @@ methods: {
         email: localStorage.getItem('userEmail'),
       };
 
-      axios.post('/api/saveinitialgnewsconfig', configObj)
+      axios.post('/api/editgnewsconfig', configObj)
         .then(response => {
           if (response.data.status === 'success') {
             Swal.fire({

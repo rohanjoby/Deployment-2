@@ -1,6 +1,19 @@
+<style>
+  .links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+</style>
+
 <template>
-  <div>
-    <h1>Welcome to News App!</h1>
+  <div class="background-image">
+    <h1>Welcome to One - Place</h1>
     <div class="links">
       <button @click="goToLogin">Login</button>
       <button @click="goToSignup">Signup</button>
@@ -21,16 +34,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.links {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 50px;
-}
-
-h1 {
-  text-align: center;
-  margin-top: 50px;
-}
-</style>

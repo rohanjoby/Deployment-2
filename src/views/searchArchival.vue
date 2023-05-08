@@ -37,7 +37,7 @@
     data() {
       return {
         articles: [],
-        limit: 1, // default limit of articles to be displayed
+        limit: 1,
         currentIndex: 0,
       };
     },

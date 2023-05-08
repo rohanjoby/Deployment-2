@@ -89,7 +89,8 @@ label {
 
 <script>
 export default {
-  data() {
+  data() 
+  {
     return {
       firstName: '',
       lastName: '',
@@ -99,7 +100,8 @@ export default {
     };
   },
   methods: {
-    async validateForm() {
+    async validateForm() 
+    {
       this.errors = {};
 
       if (!this.firstName) 
@@ -139,10 +141,13 @@ export default {
 
       return Object.keys(this.errors).length === 0;
     },
-    async signup() {
+    async signup() 
+    {
       const isValid = await this.validateForm();
-      if (isValid) {
-        try {
+      if (isValid) 
+      {
+        try 
+        {
           const response = await fetch('/api/register', {
             method: 'POST',
             headers: {
@@ -156,14 +161,16 @@ export default {
             }),
           });
 
-          if (!response.ok) {
+          if (!response.ok) 
+          {
             const errorData = await response.json();
             throw new Error(errorData.message);
           }
-
-          // Redirect to config page
+          localStorage.setItem('userEmail', this.email);
           this.$router.push('/config');
-        } catch (error) {
+        } 
+        catch (error) 
+        {
           console.error(error);
         }
       }

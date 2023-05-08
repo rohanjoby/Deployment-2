@@ -1,5 +1,3 @@
-// store/auth.js
-
 const state = {
     isLoggedIn: false,
     userEmail: ''

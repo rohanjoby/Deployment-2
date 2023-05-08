@@ -51,19 +51,15 @@ export default {
       state.userEmail = localStorage.getItem('userEmail') || '';
       state.isFirstTimeUser = localStorage.getItem('isFirstTimeUser') === 'true';
     });
-
-    // Navigation guard to prevent access to certain routes when isLoggedIn = true
     router.beforeEach((to, from, next) => {
-  if (state.isLoggedIn && (to.name === 'Login' || to.name === 'Signup' || to.name === 'Config')) {
-    next('/');
-  } else if (state.isLoggedIn && to.name === 'Login') {
-    next('/');
-  } else {
-    next();
-  }
-});
-
-
+      if (state.isLoggedIn && (to.name === 'Login' || to.name === 'Signup' || to.name === 'Config')) {
+        next('/');
+      } else if (state.isLoggedIn && to.name === 'Login') {
+        next('/');
+      } else {
+        next();
+      }
+    });
     return { isLoggedIn, userEmail, logout };
   },
 };

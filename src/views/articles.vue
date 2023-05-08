@@ -1,6 +1,6 @@
 <template>
   <div class="articles-container">
-    <h1 class="title">News Articles</h1>
+    <h1 class="title">Top Headlines</h1>
     <div class="articles-wrapper">
       <div v-if="currentArticle" class="article">
         <section>
@@ -16,7 +16,7 @@
     <div class="nav-buttons">
       <button @click="showPreviousArticle" :disabled="currentIndex <= 0">Previous</button>
       <button @click="showNextArticle" :disabled="currentIndex >= articles.length - 1">Next</button>
-      <router-link to="/articlesconfig">Articles</router-link>
+      <router-link to="/articlesconfig">Favourites</router-link>
       <router-link to="/newsarchival">Search News</router-link>
     </div>
   </div>
@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       articles: [],
-      currentIndex: 0, // index of the currently displayed article
+      currentIndex: 0,
     };
   },
   

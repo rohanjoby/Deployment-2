@@ -7,6 +7,7 @@ import Config from '../views/config.vue'
 import Articlesconfig from '../views/acticlesconfig.vue'
 import NewsArchival from '../views/NewsArchival.vue'
 import searchArchival from '../views/searchArchival.vue'
+import editconfig from '../views/editconfig.vue'
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
@@ -34,6 +35,14 @@ const router = createRouter({
       path: '/newsarchival',
       name: 'newsarchival',
       component: NewsArchival,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/editconfig',
+      name: 'editconfig',
+      component: editconfig,
       meta: {
         requiresAuth: true
       }

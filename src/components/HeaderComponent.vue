@@ -8,7 +8,8 @@
     <div class="header-right">
       <div v-if="isLoggedIn" class="user-info">
         <p>{{ userEmail }}</p>
-        <button @click="logout" class="nav-button">Logout</button>
+        <button @click="logout" class="nav-button" style="display:inline-block">Logout</button>
+        <router-link to="/editconfig" class="nav-button" style="display:inline-block">Edit Config</router-link>
       </div>
       <div v-else class="user-info">
         <router-link to="/login" class="nav-link">Login</router-link>
@@ -57,7 +58,6 @@ export default {
 </script>
 
 <style>
-/* styles for the header and navigation bar */
 header {
   background-color: #333;
   height: 50px;
@@ -112,11 +112,10 @@ header {
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 5px 10px; /* reduce padding to make the button smaller */
+  padding: 5px 10px;
   font-size: 16px;
   cursor: pointer;
 }
-
 
 .nav-button:hover {
   background-color: #0069d9;
